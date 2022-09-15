@@ -10,4 +10,4 @@ class Team(models.Model):
 
 class Participant(models.Model):
     name = models.CharField(max_length=120)
-    team_uuid = models.UUIDField()
+    team = models.ForeignKey(Team, on_delete=models.CASCADE, db_column='team_uuid')
